@@ -2,7 +2,7 @@
 title: "Implantación de aplicaciones web PHP en docker"
 author: Ernesto Vázquez García
 date: 2020-02-18 00:00:00 +0800
-categories: [Implantación de aplicaciones web, DevOps]
+categories: [Implantación de aplicaciones web]
 tags: [PHP, Docker]
 ---
 
