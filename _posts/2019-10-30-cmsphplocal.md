@@ -3,7 +3,7 @@ title: "Instalación local de un CMS PHP"
 author: Ernesto Vázquez García
 date: 2019-10-30 00:00:00 +0800
 categories: [Implantación de aplicaciones web]
-tags: [CMS]
+tags: [CMS, PHP]
 ---
 
 **Tarea 1: Instalación de un servidor LAMP**
