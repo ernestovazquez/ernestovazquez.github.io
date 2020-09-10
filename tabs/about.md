@@ -45,11 +45,11 @@ Me llamo Ernesto Vázquez García, soy de Utrera (Sevilla). En 2017 decidí apun
 
 #### FORMACIÓN COMPLEMENTARIA
 
-* **Formación en Idiomas:** 
+**Formación en Idiomas:** 
  - Preliminary English Test (PET) - B1. Cambridge Assessment English. Expedición: diciembre de 2019.
  - Italiano – Nivel Bachillerato, 2 años, “Colegio Salesianos: Nuestra Señora del Carmen. Utrera (Sevilla).”
 
-* **Cursos de Programación y Sistemas:**
+**Cursos de Programación y Sistemas:**
  - SSH. OpenWebinars. Expedición: Noviembre de 2019.
  - MongoDB. OpenWebinars. Expedición: Enero de 2020.
  - Ansible. OpenWebinars. Expedición: Enero de 2020.
