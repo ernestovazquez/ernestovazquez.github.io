@@ -3,7 +3,7 @@ title: "Implantación de aplicaciones web PHP en docker"
 author: Ernesto Vázquez García
 date: 2020-02-18 00:00:00 +0800
 categories: [Implantación de aplicaciones web]
-tags: [PHP]
+tags: [PHP, Docker, DevOps]
 ---
 
 Queremos ejecutar en un contenedor docker la aplicación web escrita en PHP: [bookMedik](https://github.com/evilnapsis/bookmedik).
