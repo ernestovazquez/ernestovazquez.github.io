@@ -3,7 +3,6 @@ title: "Creación del escenario de trabajo en OpenStack"
 author: Ernesto Vázquez García
 date: 2019-10-13 00:00:00 +0800
 categories: [Cloud]
-tags: [Cloud]
 ---
 
 Crea el siguiente escenario en OpenStack:
