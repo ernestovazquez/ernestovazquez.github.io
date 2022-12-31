@@ -9,8 +9,11 @@ title: About
 ---
 
 ---------------------------
-Me llamo Ernesto Vázquez García, soy de Utrera (Sevilla). En 2017 decidí apuntarme al Grado Superior de Administración de Sistemas Informáticos en Red en el IES Gonzalo Nazareno en Dos Hermanas (Sevilla). 
+Hola a todos. Mi nombre es Ernesto y soy DevOps Engineer.
 
+Para aquellos que no están familiarizados con el término, devops es una filosofía de trabajo que se centra en la entrega continua y la mejora continua de software. Se trata de un enfoque colaborativo que integra a desarrolladores y operadores en un equipo único con el objetivo de mejorar la calidad y la eficiencia del proceso de desarrollo y entrega de software.
+
+En resumen, un devops es un profesional que ayuda a equipos de desarrollo a entregar software de manera rápida y fiable, a través de la automatización y optimización de procesos. Si tienen alguna pregunta sobre devops, no duden en preguntar. Estoy aquí para ayudar.
 ---------------------------
 
 #### MI PERFIL TÉCNICO
@@ -35,12 +38,12 @@ Me llamo Ernesto Vázquez García, soy de Utrera (Sevilla). En 2017 decidí apun
 
 #### EXPERIENCIA LABORAL
 
+* Noviembre 2020 – Actualmente. DevOps Engineer. Chakray Consulting. Alicante, Alicante.
 * Marzo a Junio del 2020. Administrador de sistemas – DevOps en Prácticas. Guadaltech Soluciones Tecnológicas. Sevilla, Sevilla.
 
 #### FORMACIÓN ACADÉMICA
 
 * FP Grado Superior, “Administración de Sistemas Informáticos en Red. IES Gonzalo Nazareno. Dos Hermanas (Sevilla).”
-
 * Bachillerato y todos los estudios anteriores realizados en; “Colegio Salesianos: Nuestra Señora del Carmen. Utrera (Sevilla).”
 
 #### FORMACIÓN COMPLEMENTARIA
