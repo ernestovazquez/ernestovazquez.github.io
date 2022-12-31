@@ -16,6 +16,7 @@ Para aquellos que no están familiarizados con el término, devops es una filoso
 En mi trabajo diario, me encargo de asegurar que los procesos de integración y despliegue de software sean rápidos y fiables. Esto incluye la automatización de tareas repetitivas, la configuración y monitoreo de servidores y aplicaciones, y la resolución de problemas técnicos que puedan surgir durante el ciclo de vida del software.
 
 En resumen, un devops es un profesional que ayuda a equipos de desarrollo a entregar software de manera rápida y fiable, a través de la automatización y optimización de procesos. Si tienen alguna pregunta sobre devops, no duden en preguntar. Estoy aquí para ayudar.
+
 ---------------------------
 
 #### MI PERFIL TÉCNICO
