@@ -19,41 +19,12 @@ En resumen, un devops es un profesional que ayuda a equipos de desarrollo a entr
 
 ---------------------------
 
-#### MI PERFIL TÉCNICO
-
-- Dominio de equipos GNU/Linux (Debian, Ubuntu, CentOS) y Windows.
-- Dominio de servidores web (Apache, Nginx, Tomcat, memcached, varnish).
-- Implantación de aplicaciones web (Despliegue de Python, Java, CMS PHP).
-- Gestión de servicios DNS y DHCP (Bind9, DNSMasq, ISC-DHCP).
-- Redes (VLAN, Linux bridge, OpenVPN, IPv6).
-- Mantenimiento y seguridad en redes.
-- Virtualización con KVM, Docker, LXC, Kubernetes, VirtualBox.
-- Cloud con OpenStack y OpenShift.
-- Dominio en creación y configuración de entornos de desarrollo virtualizados (Vagrant, Ansible).
-- Programación con Python y bash.
-- Conocimientos básicos de desarrollo en Django.
-- Almacenamiento con RAID, ZFS, Btrfs, iSCSI.
-- Monitorización con InfluxDB, Telegraf y Grafana.
-- Monitorización con Netdata y Nagios.
-- Conocimiento en administración de sistemas gestores de bases de datos (Oracle, MySQL, PostgreSQL y MongoDB).
-- Dominio en software de control de versiones (GitHub y GitLab).
-- Conocimientos en herramientas para la gestión de proyectos (Redmine y Trello).
-
 #### EXPERIENCIA LABORAL
 
 * Noviembre 2020 – Actualmente. DevOps Engineer. Chakray Consulting. Alicante, Alicante.
 * Marzo a Junio del 2020. Administrador de sistemas – DevOps en Prácticas. Guadaltech Soluciones Tecnológicas. Sevilla, Sevilla.
 
-#### FORMACIÓN ACADÉMICA
-
-* FP Grado Superior, “Administración de Sistemas Informáticos en Red. IES Gonzalo Nazareno. Dos Hermanas (Sevilla).”
-* Bachillerato y todos los estudios anteriores realizados en; “Colegio Salesianos: Nuestra Señora del Carmen. Utrera (Sevilla).”
-
 #### FORMACIÓN COMPLEMENTARIA
-
-**Formación en Idiomas:** 
- - Preliminary English Test (PET) - B1. Cambridge Assessment English. Expedición: diciembre de 2019.
- - Italiano – Nivel Bachillerato, 2 años, “Colegio Salesianos: Nuestra Señora del Carmen. Utrera (Sevilla).”
 
 **Cursos de Programación y Sistemas:**
  - SSH. OpenWebinars. Expedición: Noviembre de 2019.
