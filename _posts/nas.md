@@ -1,0 +1,289 @@
+---
+title: "Configuración NAS Synology"
+author: Ernesto Vázquez García
+date: 2023-01-11 23:15:00 +0100
+categories: [Servicios de red e internet]
+tags: [NAS]
+---
+
+# Configuración NAS Synology
+
+NAS (Network Attached Storage) es un dispositivo de almacenamiento en red que se conecta a una red de computadoras y proporciona un acceso compartido a archivos y carpetas almacenados en él. Es una forma de almacenamiento de archivos de red donde se permite el acceso a los datos desde cualquier dispositivo conectado a la red y que soporte el protocolo correspondiente.
+
+Un dispositivo NAS es una solución de almacenamiento que se conecta a una red de computadoras mediante una conexión Ethernet y se presenta como un dispositivo de red independiente. Los dispositivos NAS son administrados mediante una interfaz web y pueden contener varios discos duros en una configuración RAID para proporcionar redundancia y mejorar la disponibilidad de los datos.
+
+## Instalación del software
+Lo primero que tenemos que hacer es conectar la NAS a la red, ya sea switch o al router.
+
+En caso de ser Synology descargaremos "Synology Assistant"
+
+![](https://i.imgur.com/yuXZ0ap.png)
+
+    
+Se ejecuta automaticamente y busca nuestro servidor NAS en la red, necesita un servidor DHCP
+    
+![](https://i.imgur.com/crhBlMI.png)
+
+Instalaremos de forma automatica, para ellos hacemos click sobre "instalar ahora".
+
+![](https://i.imgur.com/UAWhQCW.png)
+
+## Configuración:
+- Nombre: Synology NAS
+- Cuenta de administrador: Administrador (ya hay un usuario admin creado pero deshabilitado)
+- Password ([Generador de contraseña](https://passwordsgenerator.net/))
+        
+![](https://i.imgur.com/48Izb7d.png)
+
+Seleccionamos notificar cuando haya actualizaciones disponibles para actualizarlas manualmente.
+
+![](https://i.imgur.com/3UVCkXq.png)
+
+Omitimos la creación de cuenta en Synology.
+
+## Tipos de RAID:
+
+RAID (Redundant Array of Independent Disks) es un sistema que combina varios discos duros en un solo dispositivo virtual de almacenamiento. Existen varios tipos de configuraciones RAID que se utilizan para lograr diferentes objetivos, como la seguridad de los datos, la disponibilidad y el rendimiento del sistema. Los tipos más comunes de RAID son:
+
+### RAID 0
+
+![](https://i.imgur.com/nG1xBHM.png)
+
+También conocido como "striping", divide los datos en varios discos duros para mejorar el rendimiento del sistema. Los datos se dividen en fragmentos y se escriben en diferentes discos duros al mismo tiempo. Sin embargo, no ofrece ninguna forma de protección de datos, ya que si uno de los discos falla, se pierden todos los datos.
+
+### RAID 1
+
+![](https://i.imgur.com/f0ADhDV.png)
+
+También conocido como "mirroring", copia los datos en dos o más discos duros para proporcionar redundancia y protección contra fallos de disco. Si un disco falla, el sistema puede continuar operando utilizando los datos de otro disco. Esta configuración proporciona una alta disponibilidad de los datos pero tiene como contrapartida un costo elevado, ya que se requiere el doble de almacenamiento.
+
+### RAID 5
+
+![](https://i.imgur.com/ahLuTpO.png)
+
+Utiliza "striping" y "paridad" para proporcionar protección contra fallos de disco. Es necesario al menos tres discos duros para configurar RAID 5. Los datos se dividen en fragmentos y se escriben en diferentes discos duros al mismo tiempo, mientras que los datos de paridad se escriben en uno de ellos. 
+
+En caso de fallo de un disco, los datos pueden ser reconstruidos a partir de los datos y la paridad en los discos restantes. Aunque este tipo de RAID proporciona protección de datos, la reconstrucción de los datos puede tomar tiempo y puede afectar el rendimiento del sistema.
+
+### RAID 6
+
+![](https://i.imgur.com/ZOmIXhS.png)
+
+Similar a RAID 5, pero utiliza dos bloques de paridad para proporcionar protección contra fallos de dos discos duros. Esta configuración proporciona una mayor seguridad de los datos pero también tiene un mayor costo de almacenamiento y menor rendimiento.
+
+### RAID 10
+
+![](https://i.imgur.com/HamBeJB.png)
+
+También conocido como "RAID 1+0", combina características de RAID 1 y RAID 0 para proporcionar alta disponibilidad y rendimiento. Es una configuración que proporciona alta disponibilidad y alta seguridad de los datos y un buen rendimiento, pero el costo es elevado debido a la necesidad de tener un num
+
+### JBOD
+
+JBOD (Just a Bunch of Disks) es una configuración de RAID que no proporciona redundancia ni distribución de datos. JBOD simplemente presenta varios discos duros como un solo dispositivo de almacenamiento lógico, permitiendo que los datos se escriban en cualquier disco en función de su disponibilidad.
+
+En JBOD, los discos se utilizan de forma independiente y cada disco tiene su propio sistema de archivos, lo que permite una gran flexibilidad en cuanto a la organización de los datos. JBOD no proporciona ninguna forma de protección contra fallos de disco, por lo que si un disco falla, se pierden todos los datos almacenados en él. Sin embargo, JBOD es una configuración que permite una mayor flexibilidad para crear configuraciones de almacenamiento personalizadas, y su sencillez lo hace bastante simple de configurar.
+
+
+*Imagenes de los RAIDs sacadas de [tecnozero](https://www.tecnozero.com/servidor/tipos-de-raid-cual-elegir/)*
+
+## Configuración RAID:
+
+Empezamos creando los grupos de almacenamiento y volumenes, esto dependerá de la cantidad de discos duros que tengamos.
+        
+![](https://i.imgur.com/1bxsvRC.png)
+
+Estos son los que recomiendo para servidores basicos:
+- RAID 1 (2 discos duros)
+- RAID 5 (3 o más discos duros)
+- RAID 6 (8 o más discos duros)
+
+Vamos a realizar un ejemplo con RAID 5, donde seleccionamos todos los discos duros, discos compatibles. Selecionamos la capacidad maxima para nuestro volumen. 
+
+![](https://i.imgur.com/kbSx6h7.png)
+
+![](https://i.imgur.com/DbDG2ZO.png)
+
+![](https://i.imgur.com/DSjauNb.png)
+
+
+### Btrfs o ext4
+
+Btrfs y ext4 son ambos sistemas de archivos para Linux con características y objetivos diferentes, por lo que la elección entre ellos dependerá de tus necesidades específicas.
+
+ext4 es un sistema de archivos estable y maduro, es el sistema de archivos recomendado para la mayoría de los usuarios, especialmente si no necesitas características avanzadas. Es muy fiable y ha sido probado durante años en sistemas de producción, y cuenta con una amplia compatibilidad de dispositivos y herramientas de terceros.
+
+Por otro lado, Btrfs es un sistema de archivos más nuevo y menos maduro que ext4, pero ofrece características avanzadas para la gestión de almacenamiento. Por ejemplo, Btrfs ofrece snapshots, copias de seguridad incremental, balanceo de carga, protección de datos, compresión y cifrado. Si necesitas algunas de estas funciones, podría ser una buena opción. Sin embargo, si no necesitas características avanzadas y prefieres un sistema de archivos estable y comprobado, ext4 podría ser la mejor opción.
+
+En este caso vamos a utilizar en el sistema de archivos Btrfs, (con el modelo J usaremos ext4) 
+
+![](https://i.imgur.com/KONgXQX.png)
+
+A continuación nos ofrece un resumen de lo que acabamos de configurar.
+
+![](https://i.imgur.com/oPlG3wG.png)
+
+
+## Acceso y Seguridad
+
+### Usuarios y grupos
+La creación de usuarios en un dispositivo NAS Synology es un proceso sencillo que se puede realizar mediante la interfaz de administrador del dispositivo NAS.
+
+1. Accede a la interfaz de administrador del dispositivo NAS utilizando un navegador web y tus credenciales.
+2. Vaya a "Control Panel" y luego selecciona "User".
+3. En la sección "User", seleccione "Create" para crear un nuevo usuario.
+4. Ingrese el nombre de usuario y la contraseña deseada para el nuevo usuario y seleccione "Next".
+5. Asigne los permisos de acceso deseados para el usuario (como lectura, escritura, acceso remoto, etc.) y seleccione "Apply" para guardar los cambios.
+6. El nuevo usuario ahora estará disponible en la lista de usuarios del dispositivo NAS y podrá acceder a los archivos y carpetas compartidos según los permisos asignados.
+
+En la interfaz de administrador del dispositivo NAS se pueden crear grupos de usuarios, asignando permisos especificos para cada uno de estos grupos, permitiendo asi una mayor flexibilidad y control en los permisos de acceso.
+
+![](https://i.imgur.com/arUnCna.png)
+
+### Protección basica
+
+Habilitar el bloqueo automático de conexión en un dispositivo NAS Synology es una forma de aumentar la seguridad de tu dispositivo y de los archivos almacenados en él. Esto evita que alguien pueda acceder a tu dispositivo NAS sin tu autorización.
+
+Pasos para habilitar el bloqueo automático de conexión en un dispositivo NAS Synology:
+
+Seguridad > Protección, recomendable habilitar bloqueo automatico tras 10 intentos de conexión en 5 minutos. 
+
+![](https://i.imgur.com/8G4tYVN.png)
+
+La protección contra **ataques de denegación de servicio (DoS)** en un dispositivo NAS Synology puede incluir varias medidas de seguridad para ayudar a evitar que un atacante interrumpa el servicio normal del dispositivo. 
+
+![](https://i.imgur.com/iGRg2L0.png)
+
+### Autenticación de múltiples factores
+
+La autenticación de múltiples factores (AMF) es un método de autenticación que requiere más de una forma de identificación para acceder a un sistema. En el caso de una red de almacenamiento en red (NAS) Synology, se puede habilitar la AMF mediante el uso de una combinación de contraseñas y códigos de autenticación generados por una aplicación de autenticación de dos factores, como Google Authenticator o Microsoft Authenticator.
+
+Seguridad > Cuenta: recomentable habilitar la autenticación en dos factores
+        
+![](https://i.imgur.com/sBfGIfR.png)
+
+Seguridad > Seguridad: recomendable cerrar sesión automatica tras 15 minutos. También habilitaremos la opción "No permitir que DSM se incruste en iFrame".
+
+Supongamos que tiene algún servidor de intranet corporativo, donde DSM está integrado a través de la opción IFRAME. En tal caso, para los usuarios finales parecerá que DSM es parte del servidor de intranet. En tal caso, potencialmente le gustaría tener esta funcionalidad.
+
+De lo contrario, como jefe de seguridad, sugiero habilitar siempre esta opción (por lo tanto, IFRAME para DSM no está permitido). Debería estar deshabilitado por defecto.
+
+![](https://i.imgur.com/Uekduhi.png)
+
+### Servicios de archivos:
+
+SMB (Server Message Block), AFP (Apple Filing Protocol) y NFS (Network File System) son protocolos de red utilizados para compartir archivos en una red. Aunque cumplen la misma función, hay algunas diferencias entre ellos:
+
+- SMB es un protocolo de red desarrollado originalmente por *Microsoft* para compartir archivos en una red de Windows. Es el protocolo más comúnmente utilizado en entornos de red Windows y es compatible con una amplia variedad de sistemas operativos, incluidos Windows, MacOS y Linux.
+
+- AFP es un protocolo de red desarrollado por *Apple* para compartir archivos en una red de MacOS. Es compatible con MacOS, pero no es tan ampliamente compatible con otros sistemas operativos como SMB.
+
+- NFS es un protocolo de red desarrollado originalmente por Sun Microsystems (ahora propiedad de Oracle) para compartir archivos en una red de *UNIX*. Es el protocolo más comúnmente utilizado en entornos de red UNIX y es compatible con una amplia variedad de sistemas operativos, incluidos UNIX, Linux y MacOS.
+
+### Actualizar y restaurar
+
+Actualizar un dispositivo NAS Synology es un proceso sencillo y es recomendable mantenerlo actualizado para asegurar que tiene la última versión del software y las funcionalidades más recientes.
+
+Pasos para actualizar un dispositivo NAS Synology:
+
+![](https://i.imgur.com/6agjezS.png)
+
+### Puerto de acceso
+
+Hay varias razones por las cuales es recomendable cambiar el puerto en un dispositivo NAS Synology. Algunas de las razones más comunes son las siguientes:
+
+- **Conflictos de puerto:** Si el puerto predeterminado está siendo utilizado por otro dispositivo en la red, puede causar conflictos y dificultar el acceso al dispositivo NAS.
+- **Mejora de seguridad:** Cambiar el puerto predeterminado puede ayudar a mejorar la seguridad del dispositivo al evitar ataques dirigidos a puertos conocidos.
+
+Para cambiarlo tenemos que ir a la pestaña "Portal de inicio de sesión" aqui podemos cambiar el puerto por defecto de DSM, de 5000 a cualquier otro
+
+![](https://i.imgur.com/nqvjodd.png)
+
+### Consejero de seguridad
+
+El Consejero de seguridad de NAS Synology es una herramienta de seguridad desarrollada por Synology. Esta herramienta se utiliza para analizar la configuración y las configuraciones de seguridad de un sistema NAS de Synology y proporciona recomendaciones para mejorar la seguridad del sistema. Incluye opciones como verificar la versión del sistema operativo y las aplicaciones, identificar posibles vulnerabilidades, detectar y bloquear posibles intentos de inicio de sesión no autorizados y controlar el acceso a archivos y carpetas.
+
+Desde el centro de paquetes instalamos consejero de seguridad.
+
+![](https://i.imgur.com/vDXVV5C.png)
+
+![](https://i.imgur.com/fLpPXV9.png)
+
+![](https://i.imgur.com/ffKBqRc.png)
+
+
+## Compartir nuestros archivos dentro y fuera de la red local.
+
+Podemos tener 3, 4, 5... usuarios y que cada uno tenga su carpeta en este disco duro. Para ello vamos a configurarlo de la siguiente manera.
+
+Desde el panel de control > *Usuario y grupo* creamos un usuario, le asignamos como grupo users, y le asignamos las carpetas (por defecto no tenemos), podemos asignarle permisos sobre las aplicaciones
+
+![](https://i.imgur.com/iyUZvwz.jpg)
+
+![](https://i.imgur.com/GdDdYOx.png)
+
+![](https://i.imgur.com/j70Y3ay.png)
+
+![](https://i.imgur.com/pml5VDC.png)
+
+
+![](https://i.imgur.com/8wl3vlG.png)
+
+File Station: Creamos carpeta compartida, agregamos nombre, descripción y la ubicación agregamos el volumen que deseemos. Es recomendable usar cifrado en la carpeta.
+
+![](https://i.imgur.com/iNDmDNp.png)
+
+![](https://i.imgur.com/sH70ERi.png)
+
+Podemos asignarle un limite de espacio sobre la carpeta compartida 
+
+![](https://i.imgur.com/sOCsTmv.png)
+
+Por ultimo asignamos los usuarios que van a tener acceso a la carpeta 
+
+![](https://i.imgur.com/YH91JGx.png)
+
+## Conectarse al NAS usando Windows 
+
+Para iniciar sesión con los usuarios creados en la NAS primero tenemos que activar la opción "Habilitar servicio SMB"
+
+![](https://i.imgur.com/D9wvib2.png)
+
+El grupo de trabajo será el mismo que tenemos configurado en nuestro equipo de Windows.
+
+Un grupo de trabajo en un sistema operativo Windows es un conjunto de computadoras que trabajan juntas para compartir recursos de red, como archivos, impresoras y discos duros. Los dispositivos en un grupo de trabajo pueden estar conectados a través de una red de área local (LAN) o de área amplia (WAN).
+
+Cada computadora en un grupo de trabajo tiene su propia configuración de usuarios y seguridad, pero todos los dispositivos comparten los recursos. Los usuarios pueden acceder a los recursos compartidos en otros dispositivos mediante el uso de credenciales de inicio de sesión y pueden tener diferentes niveles de acceso a los recursos dependiendo de los permisos configurados.
+
+![](https://i.imgur.com/Lc9v9WV.png)
+
+En el equipo con Windows, abra el Explorador de archivos y haga clic en "Red" en la barra de navegación de la izquierda. Agregamos lo siguiente: \\ChronosNAS (Esto cambiará dependiendo del modelo de nuestra NAS)
+
+![](https://i.imgur.com/MG35U5Q.png)
+
+
+Debería ver el dispositivo NAS Synology en la lista de dispositivos de red. Haga doble clic en él para abrirlo. Si es necesario, ingrese sus credenciales de inicio de sesión para el NAS.
+
+Agregamos usuario y contraseña que hemos creado previamente
+ 
+ ![](https://i.imgur.com/qKvJFYs.png)
+
+Nos aparecerá las carpetas compartidas que hemos creado, dependiendo de los permisos que tiene el usuario con el que hemos entrado podemos ver, editar o solo leer las carpetas.
+
+![](https://i.imgur.com/jHwI6pF.png)
+
+Para asignar/mapear letra a nuestra carpeta compartida
+
+![](https://i.imgur.com/7XLVLCV.png)
+
+![](https://i.imgur.com/JOJ6oUb.png)
+
+## Acceder desde fuera de la red
+
+Para acceder a la NAS desde fuera de la red local ingresamos la URL, `quickconnect.to/tuID`, nos pedirá usuario y contraseña de nuestra NAS y ya tendremos acceso.
+
+## Conclusión
+
+En resumen, un dispositivo NAS (Network Attached Storage) es una solución de almacenamiento en red que proporciona acceso compartido a archivos y carpetas almacenados en él. Es una forma eficiente y escalable de centralizar el almacenamiento de archivos en una red, lo que permite a los usuarios acceder a los archivos desde cualquier dispositivo conectado a la red.
+
+Los dispositivos NAS son fáciles de configurar y administrar, y ofrecen una variedad de funciones avanzadas, como copias de seguridad automatizadas, streaming multimedia, y acceso remoto. También son escalables y pueden alojar varios discos duros en una configuración RAID para proporcionar redundancia y mejorar la disponibilidad de los datos.
+
