@@ -19,19 +19,3 @@ En resumen, un devops es un profesional que ayuda a equipos de desarrollo a entr
 
 ---------------------------
 
-#### EXPERIENCIA LABORAL
-
-* Noviembre 2020 – Actualmente. DevOps Engineer. Chakray Consulting. Alicante, Alicante.
-* Marzo a Junio del 2020. Administrador de sistemas – DevOps en Prácticas. Guadaltech Soluciones Tecnológicas. Sevilla, Sevilla.
-
-#### FORMACIÓN COMPLEMENTARIA
-
-**Cursos de Programación y Sistemas:**
- - SSH. OpenWebinars. Expedición: Noviembre de 2019.
- - MongoDB. OpenWebinars. Expedición: Enero de 2020.
- - Ansible. OpenWebinars. Expedición: Enero de 2020.
- - Introducción a Docker. OpenWebinars. Expedición: Febrero de 2020.
- - Curso de OpenShift. OpenWebinars. Expedición: Febrero de 2020.
- - Despliega un cluster Kubernetes con k3s. OpenWebinars. Expedición: Febrero de 2020.
- - Jenkins e Integración Continua. OpenWebinars. Expedición: Marzo de 2020
- - Curso de Terraform. OpenWebinars. Expedición: Marzo de 2020
