@@ -6,7 +6,7 @@ categories: [Administración de sistemas operativos]
 tags: [NAS]
 ---
 
-## Seguridad Windows
+## Seguridad Windows.
 
 Existen varias formas en las que se puede mejorar la seguridad en un sistema operativo Windows:
 
