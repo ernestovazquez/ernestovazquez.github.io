@@ -120,19 +120,19 @@ defaults:
       path: _drafts
     values:
       comments: false
-#  -
-#    scope:
-#      path: tags
-#    values:
-#      tab_active: Tags
-#      location: Tag
-#      breadcrumb:
-#        -
-#          label: Home
-#          url: /
-#        -
-#          label: Tags
-#          url: /tabs/tags/
+  -
+    scope:
+      path: tags
+    values:
+      tab_active: Tags
+      location: Tag
+      breadcrumb:
+        -
+          label: Home
+          url: /
+        -
+          label: Tags
+          url: /tabs/tags/
   -
     scope:
       path: categories
