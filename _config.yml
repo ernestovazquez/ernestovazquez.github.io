@@ -27,15 +27,11 @@ avatar: /assets/img/favicons/avatar.jpg   # support internet resources
 github:
   username: ernestovazquez             # change to your github username
 
-twitter:
-  username: ernestovazgar            # change to your twitter username
-
 social:
   name: Ernesto Vázquez García                  # it will shows as the copyright owner in Footer
   email: vazquezgarciaernesto@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/ernestovazgar      # change to your twitter homepage
     - https://github.com/ernestovazquez       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
@@ -51,7 +47,7 @@ google_site_verification: google_meta_tag_verification # change to your verifica
 baseurl: ''
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone: Asia/Shanghai
+timezone: Europe/Madrid
 
 google_analytics:
   id: ''          # Fill with your Google Analytics ID
