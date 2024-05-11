@@ -1,7 +1,7 @@
 ---
 title: "Automatizar Encendido/Apagado Instancias EC2"
 author: Ernesto Vázquez García
-date: 2024-05-13 09:00:00 +0200
+date: 2024-05-11 14:00:00 +0200
 categories: [Cloud]
 tags: [AWS]
 ---
