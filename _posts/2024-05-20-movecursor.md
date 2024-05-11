@@ -1,7 +1,7 @@
 ---
 title: "Script Linux para Mantener tu Ordenador Activo"
 author: Ernesto Vázquez García
-date: 2024-05-20 09:00:00 +0200
+date: 2024-05-11 09:00:00 +0200
 categories: [Curiosidades]
 tags: [Sysadmin]
 ---
