@@ -22,6 +22,7 @@ Para comenzar, crearemos un rol en IAM con los permisos adecuados para gestionar
 
 ![StartStop1](https://i.imgur.com/UCAVQk6.png)
 
+![StartStop1](https://camo.githubusercontent.com/4e6b4c89a0ffe075ae6548e3fc7bc2b69834cb735bc2641e40d17bf2211ede5f/68747470733a2f2f692e696d6775722e636f6d2f55434156516b362e706e67)
 
 2. En la ventana "Tipo de entidad de confianza", elegimos "Política de confianza personalizada" y copiamos el siguiente texto JSON:
 
