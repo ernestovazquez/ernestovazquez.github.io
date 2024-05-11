@@ -19,7 +19,7 @@ Para comenzar, crearemos un rol en IAM con los permisos adecuados para gestionar
 
 1. Accedemos a IAM\Roles y seleccionamos "Crear rol".
 
-![StartStop1](https://imgur.com/UCAVQk6)
+![StartStop1](https://i.imgur.com/UCAVQk6)
 
 
 2. En la ventana "Tipo de entidad de confianza", elegimos "Política de confianza personalizada" y copiamos el siguiente texto JSON:
@@ -40,19 +40,19 @@ Para comenzar, crearemos un rol en IAM con los permisos adecuados para gestionar
 }
 ```
 
-![StartStop2](https://imgur.com/nZO4An6)
+![StartStop2](https://i.imgur.com/nZO4An6)
 
 3.  Seleccionamos la política de permisos "AmazonSSMAutomationRole".
 
-![StartStop3](https://imgur.com/vDH5n3j)
+![StartStop3](https://i.imgur.com/vDH5n3j)
 
 4.  Revisamos la información y finalmente creamos el rol.
 
-![StartStop4](https://imgur.com/7KhZpdi)
+![StartStop4](https://i.imgur.com/7KhZpdi)
 
 Si buscamos el nombre del rol, vemos que se ha creado correctamente
 
-![StartStop5](https://imgur.com/pxNneEy)
+![StartStop5](https://i.imgur.com/pxNneEy)
 
 ## Creación de reglas 
 
@@ -60,19 +60,19 @@ Ahora configuraremos las reglas en CloudWatch para automatizar el encendido y ap
 
 1. Copiamos el ID de la instancia que deseamos controlar.
 
-![StartStop6](https://imgur.com/Bsj6mMO)
+![StartStop6](https://i.imgur.com/Bsj6mMO)
 
 2. Navegamos a la sección de "CloudWatch" y accedemos a "Reglas".
 
-![StartStop7](https://imgur.com/x6pkAyN)
+![StartStop7](https://i.imgur.com/x6pkAyN)
 
 3. Nos redirige automáticamente a "Amazon EventBridge" aquí es la pantalla donde vamos a poder crear las reglas y apagado. Seleccionamos "Crear Regla".
 
-![StartStop8](https://imgur.com/KnO5k1x)
+![StartStop8](https://i.imgur.com/KnO5k1x)
 
 4. Definición de detalles de reglas, en esta ventana agregaremos un nombre, una descripción y seleccionamos en tipo de regla "Programar", para poder ejecutar la tarea mediante un horario programable. Por ultimo seleccionamos el cuadro de la izquierda llamado, "Continuar con la creación de la regla"
 
-![StartStop9](https://imgur.com/cmEXc24)
+![StartStop9](https://i.imgur.com/cmEXc24)
 
 5. Definimos el horario de ejecución utilizando la expresión cron. Por ejemplo, para limitar el uso a horas laborales de lunes a viernes, utilizamos
 
@@ -84,7 +84,7 @@ Debajo de cada cuadro hay una descripción para reconocer su función. Cambiarem
 
 Nos aparecerá una información con las siguientes 10 desencadenadores donde nos mostrará el día y hora que se ejecutará la tarea. ¡TEN CUIDADO CON EL CAMBIO DE HORA DE TU PAIS!
 
-![StartStop10](https://imgur.com/GWSDmK0)
+![StartStop10](https://i.imgur.com/GWSDmK0)
 
 6. Configuramos los destinos:
 
@@ -96,16 +96,16 @@ Nos aparecerá una información con las siguientes 10 desencadenadores donde nos
 
 Una vez terminado de configurar estos parámetros seleccionamos siguiente para avanzar con la configuración de la regla.
 
-![StartStop11](https://imgur.com/5Fy4VZz)
+![StartStop11](https://i.imgur.com/5Fy4VZz)
 
 7. Opcionalmente, agregamos etiquetas para organizar y categorizar las reglas.
 
-![StartStop12](https://imgur.com/zHNuU3W)
+![StartStop12](https://i.imgur.com/zHNuU3W)
 
 8. Por ultimo podemos hacer un repaso para revisar todos los pasos que hemos configurado y tras comprobar que está todo correcto continuamos con "Crear regla"
 
-![StartStop13](https://imgur.com/cj5coSy)
+![StartStop13](https://i.imgur.com/cj5coSy)
 
 En el buscador podemos filtrar entre todas las reglas que tengamos y podemos encontrar las creadas. Como podemos ver en la imagen tenemos una regla para encender y otra para parar la instancia.
 
-![StartStop14](https://imgur.com/9CD8DWr)
+![StartStop14](https://i.imgur.com/9CD8DWr)
