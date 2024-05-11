@@ -3,7 +3,7 @@ title: "Aumenta la seguridad de tu PC y red: Consejos y estrategias"
 author: Ernesto Vázquez García
 date: 2023-01-20 18:50:00 +0100
 categories: [Administración de sistemas operativos]
-tags: [sysadmin]
+tags: [Seguridad]
 ---
 
 ## Seguridad Windows.
