@@ -3,6 +3,7 @@ title: "Eliminar un namespace atascado en el estado 'Terminating' en OpenShift"
 author: Ernesto Vázquez García
 date: 2024-05-10 22:40:00 +0200
 categories: [DevOps]
+tags: [Openshift]
 ---
 
 ¿Alguna vez te has encontrado con el frustrante error "Conflict: Operation cannot be fulfilled on namespaces" al intentar eliminar un namespace en OpenShift? Esta situación suele ocurrir cuando un proyecto se queda atascado en el estado "Terminating" debido a algún problema en el proceso de eliminación. Afortunadamente, existe una solución técnica para resolver este inconveniente.

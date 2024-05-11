@@ -3,6 +3,7 @@ title: "Automatizar Encendido/Apagado Instancias EC2"
 author: Ernesto Vázquez García
 date: 2024-05-13 09:00:00 +0200
 categories: [Cloud]
+tags: [AWS]
 ---
 
 Con el objetivo de optimizar los costos operativos en AWS, implementaremos una solución automatizada para encender y apagar instancias EC2 según un horario predefinido. Esto nos permitirá utilizar las instancias únicamente cuando sean necesarias, como durante el horario laboral, y evitar gastos innecesarios durante periodos de inactividad.
