@@ -1,7 +1,7 @@
 ---
 title: "Eliminar un namespace atascado en el estado 'Terminating' en OpenShift"
 author: Ernesto Vázquez García
-date: 2023-11-09 22:40:00 +0200
+date: 2023-10-09 22:40:00 +0200
 categories: [DevOps]
 tags: [Openshift]
 ---
