@@ -13,7 +13,7 @@ En este artículo, exploraremos cómo implementar la automatización del encendi
 En lugar de tener que crear múltiples reglas para cada instancia que se crea, hemos adoptado un enfoque más eficiente y dinámico. Tal como detallamos en un [artículo anterior](https://ernestovazquez.es/posts/cloudwatch-startstopec2), hemos implementado una solución que se basa en la asignación de etiquetas a nuestras instancias EC2. Al asignar una etiqueta específica, como `env=dev`, la función se activa automáticamente para gestionar el proceso de automatización del encendido y apagado. Este método nos libera de la tarea tediosa de crear y mantener múltiples reglas, permitiéndonos escalar nuestra infraestructura de manera ágil y sin complicaciones adicionales.
 
 ## ¿Cómo Funciona?
-Para automatizar el encendido y apagado, hemos utilizado el módulo disponible en: https://github.com/eanselmi/terraform-aws-ec2-rds-scheduler
+Para automatizar el encendido y apagado, hemos utilizado el módulo disponible en [este enlace](https://github.com/eanselmi/terraform-aws-ec2-rds-scheduler).
 
 Este módulo facilita la implementación de los siguientes recursos:
 
