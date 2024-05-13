@@ -8,6 +8,10 @@ tags: [Openshift]
 
 En el ecosistema de OpenShift, a menudo nos enfrentamos a la necesidad de ejecutar scripts o procesos automatizados que requieren autenticación contra el clúster de OpenShift. Sin embargo, es común que los tokens de acceso generados para los usuarios tengan una fecha de vencimiento, lo que puede complicar la automatización a largo plazo. En este artículo, exploraremos cómo generar tokens de acceso sin fecha de vencimiento para garantizar una autenticación continua y sin interrupciones en nuestros scripts y procesos automatizados.
 
+Ejemplo de un token de acceso generado por el usuario en OpenShift, con una fecha de vencimiento establecida:
+
+![image](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/53d48da8-42b6-44e0-b69d-6e8317969528)
+
 ## Creación de una Cuenta de Servicio
 
 El primer paso es crear una cuenta de servicio en OpenShift. Esta cuenta de servicio actuará como nuestra entidad de autenticación sin fecha de vencimiento. Ejecuta el siguiente comando para crear la cuenta de servicio llamada "robot":
