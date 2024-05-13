@@ -133,11 +133,11 @@ Podemos ajustar el horario de dos maneras: a través de Terraform o mediante la 
 
 Nos dirigimos a Amazon EventBridge -> Programaciones
 
-![StartStopNew](https://i.imgur.com/6Yyg7vV.png)
+![StartStopNew](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/58b4c1c3-1d7c-4581-bca7-2f14083cd9eb)
 
 Seleccionamos la programación que necesitemos cambiar y la editaremos.
 
-![StartStopNew2](https://i.imgur.com/K4FgRqY.png)
+![StartStopNew2](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/9b5dabf0-4d04-42da-82f9-ea046011f891)
 
 Definimos el horario de ejecución utilizando la expresión cron. Por ejemplo, para limitar el uso a horas laborales de lunes a viernes, utilizamos
 
@@ -149,7 +149,7 @@ Debajo de cada cuadro hay una descripción para reconocer su función. Cambiarem
 
 Nos aparecerá una información con las siguientes 10 desencadenadores donde nos mostrará el día y hora que se ejecutará la tarea.
 
-![StartStopNew3](https://i.imgur.com/p5DHlz2.png)
+![StartStopNew3](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/1d8715e1-8059-42c8-890f-b7753ef229a9)
 
 ### Desde la terminal con terraform
 
