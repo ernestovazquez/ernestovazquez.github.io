@@ -97,7 +97,7 @@ Value: dev
 
 Una vez que hemos configurado nuestros archivos de Terraform, el siguiente paso es desplegar la infraestructura en AWS. Para ello, utilizaremos una serie de comandos de Terraform:
 
-1. terraform init
+> 1. Cargar módulo
 
 Este comando inicializa el directorio de trabajo y descarga los proveedores y módulos necesarios, incluyendo el módulo que estamos utilizando en nuestro proyecto. Ejecutar este comando asegura que Terraform esté listo para su uso.
 
@@ -105,15 +105,15 @@ Este comando inicializa el directorio de trabajo y descarga los proveedores y m�
 terraform init
 ```
 
-2. terraform plan
+> 2. Revisión de los archivos
 
-El comando terraform plan analiza los archivos de configuración y muestra los cambios que Terraform realizará en la infraestructura. Esto incluye los recursos que se crearán, modificarán o eliminarán. Es una buena práctica revisar este plan para asegurarse de que los cambios planeados sean los esperados.
+Este comando analiza los archivos de configuración y muestra los cambios que Terraform realizará en la infraestructura. Esto incluye los recursos que se crearán, modificarán o eliminarán. Es una buena práctica revisar este plan para asegurarse de que los cambios planeados sean los esperados.
 
 ```
 terraform plan
 ```
 
-3. terraform apply
+> 3. Aplicamos cambios
 
 Una vez que hemos revisado el plan y estamos listos para aplicar los cambios, ejecutamos terraform apply. Este comando despliega la infraestructura según lo especificado en los archivos de configuración de Terraform.
 
