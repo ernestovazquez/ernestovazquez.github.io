@@ -3,7 +3,7 @@ title: "Terraform para automatizar encendido y apagado de instancias EC2"
 author: Ernesto Vázquez García
 date: 2024-05-13 09:00:00 +0200
 categories: [Cloud]
-tags: [AWS]
+tags: [AWS, Terraform]
 ---
 
 # Introducción
