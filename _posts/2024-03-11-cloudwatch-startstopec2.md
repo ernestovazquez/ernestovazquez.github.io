@@ -20,7 +20,7 @@ Para comenzar, crearemos un rol en IAM con los permisos adecuados para gestionar
 
 1.- Accedemos a IAM\Roles y seleccionamos "Crear rol".
 
-![image1](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/9f7bfdb4-dddb-4bd6-a77d-39df8f860201)
+![image](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/641add14-8be2-4671-865a-f9c4f58ffe9b)
 
 2.- En la ventana "Tipo de entidad de confianza", elegimos "Política de confianza personalizada" y copiamos el siguiente texto JSON:
 
