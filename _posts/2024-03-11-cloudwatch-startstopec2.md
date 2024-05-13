@@ -20,7 +20,7 @@ Para comenzar, crearemos un rol en IAM con los permisos adecuados para gestionar
 
 1.- Accedemos a IAM\Roles y seleccionamos "Crear rol".
 
-![StartStop1](https://i.imgur.com/UCAVQk6.png)
+![image1](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/9f7bfdb4-dddb-4bd6-a77d-39df8f860201)
 
 2.- En la ventana "Tipo de entidad de confianza", elegimos "Política de confianza personalizada" y copiamos el siguiente texto JSON:
 
@@ -39,20 +39,19 @@ Para comenzar, crearemos un rol en IAM con los permisos adecuados para gestionar
   ]
 }
 ```
-
-![StartStop2](https://i.imgur.com/nZO4An6.png)
+![image](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/922085d2-adc0-4616-8834-81597d8d182b)
 
 3.-  Seleccionamos la política de permisos "AmazonSSMAutomationRole".
 
-![StartStop3](https://i.imgur.com/vDH5n3j.png)
+![image](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/a0ed3a4e-11f3-4507-9643-5446c3f1daf1)
 
 4.-  Revisamos la información y finalmente creamos el rol.
 
-![StartStop4](https://i.imgur.com/7KhZpdi.png)
+![image](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/aa56144f-b788-428c-8212-797cde97b256)
 
 Si buscamos el nombre del rol, vemos que se ha creado correctamente
 
-![StartStop5](https://i.imgur.com/pxNneEy.png)
+![image](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/bbf7ad31-0484-48c7-b48f-f427ea16af3f)
 
 ## Creación de reglas 
 
@@ -60,19 +59,19 @@ Ahora configuraremos las reglas en CloudWatch para automatizar el encendido y ap
 
 1.- Copiamos el ID de la instancia que deseamos controlar.
 
-![StartStop6](https://i.imgur.com/Bsj6mMO.png)
+![image](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/64bc5b5e-fef8-4219-884e-ed31d58d3567)
 
 2.- Navegamos a la sección de "CloudWatch" y accedemos a "Reglas".
 
-![StartStop7](https://i.imgur.com/x6pkAyN.png)
+![image](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/55be305d-af1b-4bb2-a63f-ebbb545fea93)
 
 3.- Nos redirige automáticamente a "Amazon EventBridge" aquí es la pantalla donde vamos a poder crear las reglas y apagado. Seleccionamos "Crear Regla".
 
-![StartStop8](https://i.imgur.com/KnO5k1x.png)
+![image](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/7b732d8b-63b3-4356-9418-536c3d5ab557)
 
 4.- Definición de detalles de reglas, en esta ventana agregaremos un nombre, una descripción y seleccionamos en tipo de regla "Programar", para poder ejecutar la tarea mediante un horario programable. Por ultimo seleccionamos el cuadro de la izquierda llamado, "Continuar con la creación de la regla"
 
-![StartStop9](https://i.imgur.com/cmEXc24.png)
+![image](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/1f50b670-c9d8-4026-b492-b1ace50fa91f)
 
 5.- Definimos el horario de ejecución utilizando la expresión cron. Por ejemplo, para limitar el uso a horas laborales de lunes a viernes, utilizamos
 
@@ -84,7 +83,7 @@ Debajo de cada cuadro hay una descripción para reconocer su función. Cambiarem
 
 Nos aparecerá una información con las siguientes 10 desencadenadores donde nos mostrará el día y hora que se ejecutará la tarea. ¡TEN CUIDADO CON EL CAMBIO DE HORA DE TU PAIS!
 
-![StartStop10](https://i.imgur.com/GWSDmK0.png)
+![image](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/a25e928e-ac02-4372-b720-559111fe4f06)
 
 6.- Configuramos los destinos:
 
@@ -96,16 +95,17 @@ Nos aparecerá una información con las siguientes 10 desencadenadores donde nos
 
 Una vez terminado de configurar estos parámetros seleccionamos siguiente para avanzar con la configuración de la regla.
 
-![StartStop11](https://i.imgur.com/5Fy4VZz.png)
+![image](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/17bb958f-eac6-4728-b120-73f129b74ce1)
 
 7.- Opcionalmente, agregamos etiquetas para organizar y categorizar las reglas.
 
-![StartStop12](https://i.imgur.com/zHNuU3W.png)
+![image](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/222ee86f-0480-4473-ba18-0f3736a6b754)
 
 8.- Por ultimo podemos hacer un repaso para revisar todos los pasos que hemos configurado y tras comprobar que está todo correcto continuamos con "Crear regla"
 
-![StartStop13](https://i.imgur.com/cj5coSy.png)
+![image](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/3f093a76-6634-45b8-9d97-00852e6845e0)
+
 
 En el buscador podemos filtrar entre todas las reglas que tengamos y podemos encontrar las creadas. Como podemos ver en la imagen tenemos una regla para encender y otra para parar la instancia.
 
-![StartStop14](https://i.imgur.com/9CD8DWr.png)
+![image](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/e1fc8e1b-ec8b-4a4e-ac6e-5d8146e6b985)
