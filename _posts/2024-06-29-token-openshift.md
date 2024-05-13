@@ -1,5 +1,5 @@
 ---
-title: "Tokens de Acceso Sin Fecha de Vencimiento en OpenShift"
+title: "Cómo generar un Token de Acceso sin Fecha de Vencimiento en OpenShift"
 author: Ernesto Vázquez García
 date: 2024-06-29 09:00:00 +0200
 categories: [DevOps]
