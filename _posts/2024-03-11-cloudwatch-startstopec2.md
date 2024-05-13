@@ -59,7 +59,7 @@ Ahora configuraremos las reglas en CloudWatch para automatizar el encendido y ap
 
 1.- Copiamos el ID de la instancia que deseamos controlar.
 
-![image](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/64bc5b5e-fef8-4219-884e-ed31d58d3567)
+![image](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/6bb9288f-c275-4b73-b45d-97c4066d2916)
 
 2.- Navegamos a la sección de "CloudWatch" y accedemos a "Reglas".
 
@@ -95,7 +95,7 @@ Nos aparecerá una información con las siguientes 10 desencadenadores donde nos
 
 Una vez terminado de configurar estos parámetros seleccionamos siguiente para avanzar con la configuración de la regla.
 
-![image](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/17bb958f-eac6-4728-b120-73f129b74ce1)
+![image](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/5ce83aa0-76bf-42f9-9405-014ffa51be75)
 
 7.- Opcionalmente, agregamos etiquetas para organizar y categorizar las reglas.
 
