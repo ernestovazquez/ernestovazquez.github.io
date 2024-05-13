@@ -157,9 +157,9 @@ Desde Terraform también podemos realizar ediciones de la siguiente manera:
 
 Para ajustar los horarios de encendido y apagado de las instancias, simplemente edita el archivo terraform.tfvars siguiendo estos pasos:
 
-1. Abre el archivo `terraform.tfvars`.
+1.- Abre el archivo `terraform.tfvars`.
 
-2. Localiza la sección `ec2_start_stop_schedules`, donde se definen los horarios de encendido y apagado para diferentes entornos. Por ejemplo:
+2.- Localiza la sección `ec2_start_stop_schedules`, donde se definen los horarios de encendido y apagado para diferentes entornos. Por ejemplo:
 
 ```
 ec2_start_stop_schedules = {
@@ -171,7 +171,8 @@ ec2_start_stop_schedules = {
   }
 }
 ```
-3. Edita las expresiones `cron_stop` y `cron_start` según el nuevo horario deseado. Por ejemplo, si deseas cambiar el horario a las 8:00 AM para el encendido y a las 6:00 PM para el apagado de las instancias, puedes ajustar las expresiones de la siguiente manera:
+
+3.- Edita las expresiones `cron_stop` y `cron_start` según el nuevo horario deseado. Por ejemplo, si deseas cambiar el horario a las 8:00 AM para el encendido y a las 6:00 PM para el apagado de las instancias, puedes ajustar las expresiones de la siguiente manera:
 
 ```
 ec2_start_stop_schedules = {
@@ -184,9 +185,9 @@ ec2_start_stop_schedules = {
 }
 ```
 
-4. Guarda los cambios realizados en el archivo `terraform.tfvars`.
+4.- Guarda los cambios realizados en el archivo `terraform.tfvars`.
 
-5. Una vez realizados estos cambios, ejecuta nuevamente los siguientes comandos de Terraform para aplicar las modificaciones:
+5.- Una vez realizados estos cambios, ejecuta nuevamente los siguientes comandos de Terraform para aplicar las modificaciones:
 
 ```
 terraform plan
