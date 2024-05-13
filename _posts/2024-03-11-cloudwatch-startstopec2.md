@@ -18,11 +18,11 @@ Pasos para la automatización:
 
 Para comenzar, crearemos un rol en IAM con los permisos adecuados para gestionar el encendido y apagado de las instancias.
 
-1. Accedemos a IAM\Roles y seleccionamos "Crear rol".
+1.- Accedemos a IAM\Roles y seleccionamos "Crear rol".
 
 ![StartStop1](https://i.imgur.com/UCAVQk6.png)
 
-2. En la ventana "Tipo de entidad de confianza", elegimos "Política de confianza personalizada" y copiamos el siguiente texto JSON:
+2.- En la ventana "Tipo de entidad de confianza", elegimos "Política de confianza personalizada" y copiamos el siguiente texto JSON:
 
 ```
 {
@@ -42,11 +42,11 @@ Para comenzar, crearemos un rol en IAM con los permisos adecuados para gestionar
 
 ![StartStop2](https://i.imgur.com/nZO4An6.png)
 
-3.  Seleccionamos la política de permisos "AmazonSSMAutomationRole".
+3.-  Seleccionamos la política de permisos "AmazonSSMAutomationRole".
 
 ![StartStop3](https://i.imgur.com/vDH5n3j.png)
 
-4.  Revisamos la información y finalmente creamos el rol.
+4.-  Revisamos la información y finalmente creamos el rol.
 
 ![StartStop4](https://i.imgur.com/7KhZpdi.png)
 
@@ -58,23 +58,23 @@ Si buscamos el nombre del rol, vemos que se ha creado correctamente
 
 Ahora configuraremos las reglas en CloudWatch para automatizar el encendido y apagado de las instancias EC2.
 
-1. Copiamos el ID de la instancia que deseamos controlar.
+1.- Copiamos el ID de la instancia que deseamos controlar.
 
 ![StartStop6](https://i.imgur.com/Bsj6mMO.png)
 
-2. Navegamos a la sección de "CloudWatch" y accedemos a "Reglas".
+2.- Navegamos a la sección de "CloudWatch" y accedemos a "Reglas".
 
 ![StartStop7](https://i.imgur.com/x6pkAyN.png)
 
-3. Nos redirige automáticamente a "Amazon EventBridge" aquí es la pantalla donde vamos a poder crear las reglas y apagado. Seleccionamos "Crear Regla".
+3.- Nos redirige automáticamente a "Amazon EventBridge" aquí es la pantalla donde vamos a poder crear las reglas y apagado. Seleccionamos "Crear Regla".
 
 ![StartStop8](https://i.imgur.com/KnO5k1x.png)
 
-4. Definición de detalles de reglas, en esta ventana agregaremos un nombre, una descripción y seleccionamos en tipo de regla "Programar", para poder ejecutar la tarea mediante un horario programable. Por ultimo seleccionamos el cuadro de la izquierda llamado, "Continuar con la creación de la regla"
+4.- Definición de detalles de reglas, en esta ventana agregaremos un nombre, una descripción y seleccionamos en tipo de regla "Programar", para poder ejecutar la tarea mediante un horario programable. Por ultimo seleccionamos el cuadro de la izquierda llamado, "Continuar con la creación de la regla"
 
 ![StartStop9](https://i.imgur.com/cmEXc24.png)
 
-5. Definimos el horario de ejecución utilizando la expresión cron. Por ejemplo, para limitar el uso a horas laborales de lunes a viernes, utilizamos
+5.- Definimos el horario de ejecución utilizando la expresión cron. Por ejemplo, para limitar el uso a horas laborales de lunes a viernes, utilizamos
 
 ```
 cron(0 17 ? * MON-FRI *)
@@ -86,7 +86,7 @@ Nos aparecerá una información con las siguientes 10 desencadenadores donde nos
 
 ![StartStop10](https://i.imgur.com/GWSDmK0.png)
 
-6. Configuramos los destinos:
+6.- Configuramos los destinos:
 
 - **Servicio de AWS**
 - **Seleccione un destino:** Vamos a buscar "Automatización del administrador del sistema" o "Automatización de Systems Manager" cambiará el nombre dependiendo de la versión. 
@@ -98,11 +98,11 @@ Una vez terminado de configurar estos parámetros seleccionamos siguiente para a
 
 ![StartStop11](https://i.imgur.com/5Fy4VZz.png)
 
-7. Opcionalmente, agregamos etiquetas para organizar y categorizar las reglas.
+7.- Opcionalmente, agregamos etiquetas para organizar y categorizar las reglas.
 
 ![StartStop12](https://i.imgur.com/zHNuU3W.png)
 
-8. Por ultimo podemos hacer un repaso para revisar todos los pasos que hemos configurado y tras comprobar que está todo correcto continuamos con "Crear regla"
+8.- Por ultimo podemos hacer un repaso para revisar todos los pasos que hemos configurado y tras comprobar que está todo correcto continuamos con "Crear regla"
 
 ![StartStop13](https://i.imgur.com/cj5coSy.png)
 
