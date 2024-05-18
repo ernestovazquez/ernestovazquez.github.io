@@ -6,8 +6,6 @@ categories: [Cloud]
 tags: [AWS, Terraform]
 ---
 
-# Introducción
-
 En este artículo, exploraremos cómo implementar la automatización del encendido y apagado de instancias EC2 en AWS utilizando Terraform y Lambda. Esta solución está diseñada para ayudarte a reducir costos al implementar apagados programados específicamente para instancias EC2 durante períodos de inactividad, y posteriormente, encenderlas según el horario especificado. Mediante el uso de esta combinación de herramientas, podremos gestionar nuestras instancias de manera eficiente, garantizando que estén disponibles solo cuando sean necesarias, lo que resultará en una optimización de recursos y una reducción de gastos operativos.
 
 En lugar de tener que crear múltiples reglas para cada instancia que se crea, hemos adoptado un enfoque más eficiente y dinámico. Tal como detallamos en un [artículo anterior](https://ernestovazquez.es/posts/cloudwatch-startstopec2), hemos implementado una solución que se basa en la asignación de etiquetas a nuestras instancias EC2. Al asignar una etiqueta específica, como `env=dev`, la función se activa automáticamente para gestionar el proceso de automatización del encendido y apagado. Este método nos libera de la tarea tediosa de crear y mantener múltiples reglas, permitiéndonos escalar nuestra infraestructura de manera ágil y sin complicaciones adicionales.
