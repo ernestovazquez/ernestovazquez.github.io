@@ -6,19 +6,21 @@
  * MIT License
  */
 
-function copyLink(url) {
-  if (!url || 0 === url.length) {
-    return;
+function copyLink() {
+  const url = window.location.href;
+  
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(url).then(function() {
+      alert("Link copied successfully!");
+    }).catch(function(error) {
+      console.error("Failed to copy the link: ", error);
+    });
+  } else {
+    const $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val(url).select();
+    document.execCommand("copy");
+    $temp.remove();
+    alert("Link copied successfully!");
   }
-
-  url = window.location.href;
-  var $temp = $("<input>");
-
-  $("body").append($temp);
-  $temp.val(url).select();
-  document.execCommand("copy");
-  $temp.remove();
-
-  alert("Link copied successfully!");
-
 }
