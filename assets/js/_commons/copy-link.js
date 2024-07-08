@@ -18,11 +18,12 @@ function copyLink() {
     });
   } else {
     // Método de respaldo para navegadores que no soportan la API Clipboard
-    const $temp = $("<input>");
-    $("body").append($temp);
-    $temp.val(url).select();
+    const $temp = document.createElement("input");
+    document.body.appendChild($temp);
+    $temp.value = url;
+    $temp.select();
     document.execCommand("copy");
-    $temp.remove();
+    document.body.removeChild($temp);
     showNotification("Link copied successfully!");
   }
 }
