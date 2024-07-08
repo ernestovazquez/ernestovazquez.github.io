@@ -11,7 +11,9 @@ function copyLink() {
   
   // Verifica si la API Clipboard está disponible
   if (navigator.clipboard) {
-    navigator.clipboard.writeText(url).catch(function(error) {
+    navigator.clipboard.writeText(url).then(function() {
+      alert("Link copied successfully!");
+    }).catch(function(error) {
       console.error("Failed to copy the link: ", error);
     });
   } else {
@@ -21,5 +23,6 @@ function copyLink() {
     $temp.val(url).select();
     document.execCommand("copy");
     $temp.remove();
+    alert("Link copied successfully!");
   }
 }
