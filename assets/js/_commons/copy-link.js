@@ -9,7 +9,6 @@
 function copyLink() {
   const url = window.location.href;
   
-  // Verifica si la API Clipboard está disponible
   if (navigator.clipboard) {
     navigator.clipboard.writeText(url).then(function() {
       alert("Link copied successfully!");
@@ -17,7 +16,6 @@ function copyLink() {
       console.error("Failed to copy the link: ", error);
     });
   } else {
-    // Método de respaldo para navegadores que no soportan la API Clipboard
     const $temp = $("<input>");
     $("body").append($temp);
     $temp.val(url).select();
