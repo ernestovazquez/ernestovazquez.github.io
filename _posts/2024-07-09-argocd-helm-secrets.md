@@ -5,7 +5,6 @@ date: 2024-07-09 11:55:00 +0200
 categories: [DevOps]
 tags: [Openshift]
 ---
-## Descripción
 
 Cuando queremos desplegar una aplicación con Helm en nuestro ArgoCD, algunos archivos `values.yaml` no tienen por qué incluir datos sensibles como contraseñas o certificados. Sin embargo, en caso de que sí los contengan, es recomendable o casi obligatorio por seguridad que esos archivos se suban encriptados y que el propio ArgoCD sea capaz de desencriptarlos antes de desplegar la aplicación.
 
