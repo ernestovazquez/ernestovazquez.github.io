@@ -223,17 +223,17 @@ databaseSecret:
 
 Proceso de Edición y Re-encriptación
 
-1. Desencriptar el Archivo: Utilizamos el comando anterior para obtener el contenido desencriptado.
+1.- Desencriptar el Archivo: Utilizamos el comando anterior para obtener el contenido desencriptado.
 
-2. Editar el Archivo: Realizamos los cambios necesarios en el archivo `values-secrets.yaml`.
+2.- Editar el Archivo: Realizamos los cambios necesarios en el archivo `values-secrets.yaml`.
 
-3. Re-encriptar el Archivo: Una vez realizados los cambios, volvemos a encriptar el archivo usando el comando:
+3.- Re-encriptar el Archivo: Una vez realizados los cambios, volvemos a encriptar el archivo usando el comando:
 
 ```
 helm secrets encrypt values-secrets.yaml > values-secrets-enc.yaml
 ```
 
-4. Subir a Nuestro Repositorio Git: Finalmente, subimos el archivo encriptado `values-secrets-enc.yaml` a nuestro repositorio Git.
+4.- Subir a Nuestro Repositorio Git: Finalmente, subimos el archivo encriptado `values-secrets-enc.yaml` a nuestro repositorio Git.
 
 Este flujo de trabajo nos permite mantener los datos sensibles protegidos mientras realizamos las modificaciones necesarias de manera segura.
 
