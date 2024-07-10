@@ -1,11 +1,11 @@
 ---
 title: "Terraform + AWS"
+description: "Esta es una breve descripción de mi post. Aquí resumo el contenido del post."
 author: Ernesto Vázquez García
 date: 2020-03-25 00:00:00 +0800
 categories: [Cloud]
 tags: [AWS, Terraform]
 pin: true
-excerpt: "Esta es una breve descripción de mi post. Aquí resumo el contenido del post."
 ---
 
 ![terraformaws](https://github.com/ernestovazquez/ernestovazquez.github.io/assets/32536051/0cf90d11-e981-4703-bb97-2fec34d255c6)
