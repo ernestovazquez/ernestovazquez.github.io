@@ -1,6 +1,6 @@
 #!/usr/local/bin/bash
 #
-# Create HTML pages for Categories and Tags in posts.
+# Create HTML pages for Categories, Tags, and a custom collection like "_recetas".
 #
 # Usage:
 #     Call from the '_posts' sibling directory.
@@ -14,9 +14,11 @@ set -eu
 
 TYPE_CATEGORY=0
 TYPE_TAG=1
+TYPE_COLLECTION=2
 
 category_count=0
 tag_count=0
+collection_count=0
 
 _read_yaml() {
   local _endline="$(grep -n "\-\-\-" "$1" | cut -d: -f 1 | sed -n '2p')"
@@ -40,6 +42,11 @@ read_tags() {
   echo "$_yaml" | grep "^tags *:" | sed "s/tags *: *//;s/\[//;s/\].*//;s/, */,/g;s/\"//g;s/'//g"
 }
 
+read_collection() {
+  local _yaml="$(_read_yaml "$1")"
+  echo "$_yaml" | grep "^collection *:" | sed "s/collection *: *//;s/\[//;s/\].*//;s/, */,/g;s/\"//g;s/'//g"
+}
+
 init() {
 
   if [[ -d categories ]]; then
@@ -50,11 +57,15 @@ init() {
     rm -rf tags
   fi
 
+  if [[ -d _recetas ]]; then
+    rm -rf _recetas
+  fi
+
   if [[ ! -d _posts ]]; then
     exit 0
   fi
 
-  mkdir categories tags
+  mkdir categories tags _recetas
 }
 
 create_category() {
@@ -80,7 +91,6 @@ create_tag() {
     local _filepath="tags/$(echo "$_name" | sed "s/ /-/g;s/'//g" | awk '{print tolower($0)}').html"
 
     if [[ ! -f $_filepath ]]; then
-
       echo "---" > "$_filepath"
       echo "layout: tag" >> "$_filepath"
       echo "title: $_name" >> "$_filepath"
@@ -92,52 +102,64 @@ create_tag() {
   fi
 }
 
-#########################################
-# Create HTML pages for Categories/Tags.
-# Arguments:
-#   $1 - an array string
-#   $2 - type specified option
-#########################################
+create_collection() {
+  if [[ -n $1 ]]; then
+    local _name=$1
+    local _filepath="_recetas/$(echo "$_name" | sed 's/ /-/g' | awk '{print tolower($0)}').html"
+
+    if [[ ! -f $_filepath ]]; then
+      echo "---" > "$_filepath"
+      echo "layout: collection" >> "$_filepath"
+      echo "title: $_name" >> "$_filepath"
+      echo "collection: $_name" >> "$_filepath"
+      echo "---" >> "$_filepath"
+
+      ((collection_count = collection_count + 1))
+    fi
+  fi
+}
+
 create_pages() {
   if [[ -n $1 ]]; then
-    # split string to array
     IFS_BAK=$IFS
     IFS=','
     local _string=$1
 
     case $2 in
-
       $TYPE_CATEGORY)
         for i in ${_string#,}; do
           create_category "$i"
         done
         ;;
-
       $TYPE_TAG)
         for i in ${_string#,}; do
           create_tag "$i"
         done
         ;;
-
-      *) ;;
-
+      $TYPE_COLLECTION)
+        for i in ${_string#,}; do
+          create_collection "$i"
+        done
+        ;;
+      *)
+        ;;
     esac
 
     IFS=$IFS_BAK
   fi
-
 }
 
 main() {
-
   init
 
   for _file in $(find "_posts" -type f \( -iname \*.md -o -iname \*.markdown \)); do
     local _categories=$(read_categories "$_file")
     local _tags=$(read_tags "$_file")
+    local _collection=$(read_collection "$_file")
 
     create_pages "$_categories" $TYPE_CATEGORY
     create_pages "$_tags" $TYPE_TAG
+    create_pages "$_collection" $TYPE_COLLECTION
   done
 
   if [[ $category_count -gt 0 ]]; then
@@ -147,6 +169,11 @@ main() {
   if [[ $tag_count -gt 0 ]]; then
     echo "[INFO] Succeed! $tag_count tag-pages created."
   fi
+
+  if [[ $collection_count -gt 0 ]]; then
+    echo "[INFO] Succeed! $collection_count collection-pages created."
+  fi
 }
 
 main
+
