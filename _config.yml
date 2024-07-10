@@ -198,6 +198,6 @@ sitemap_exclude:  # Sitemap will exclude the following items.
     - redirects.json
 
 collections:
-  cocina:
+  recetas:
     output: true
-    permalink: /cocina/:path/
+    permalink: /recetas/:title/
