@@ -4,6 +4,9 @@ author: Ernesto Vázquez García
 date: 2020-03-25 00:00:00 +0800
 categories: [Cloud]
 tags: [AWS, Terraform]
+pin: true
+math: true
+mermaid: true
 ---
 
 # Introducción
