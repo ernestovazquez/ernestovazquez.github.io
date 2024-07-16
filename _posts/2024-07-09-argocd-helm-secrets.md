@@ -1,7 +1,7 @@
 ---
 title: "ArgoCD with Helm-Secrets and AGE Encryption"
 author: Ernesto Vázquez García
-date: 2024-07-09 11:55:00 +0200
+date: 2024-07-09 12:00:00 +0200
 categories: [DevOps]
 tags: [Openshift]
 ---
