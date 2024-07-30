@@ -13,10 +13,8 @@ title: Ernesto Vázquez                          # the main title
 tagline: DevOps Engineer  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, portfolio, sidebar,
-  bootstrap Jekyll theme with responsive web design
-  and focuses on text presentation.
-
+  Blog técnico sobre el mundo Devops
+  
 # Replace with the website url, e.g. 'https://username.github.io'
 url: 'https://ernestovazquez.es'
 
