@@ -29,32 +29,32 @@
 </div>
 
 <style>
-  .fa-link {
+  .fa-link[data-toggle="tooltip"] {
     position: relative;
   }
 
-  .fa-link::after {
-    content: "Copy link";
+  .fa-link[data-toggle="tooltip"]::after {
+    content: attr(title);
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 100%;
+    top: -150%; /* Adjust the value to place the tooltip above the icon */
     white-space: nowrap;
     background: #000;
     color: #fff;
     padding: 5px;
     border-radius: 5px;
-    margin-top: 5px;
     font-size: 12px;
     display: none;
+    z-index: 1000;
   }
 
-  .fa-link:hover::after,
-  .fa-link.copied::after {
+  .fa-link[data-toggle="tooltip"]:hover::after,
+  .fa-link[data-toggle="tooltip"].copied::after {
     display: block;
   }
 
-  .fa-link.copied::after {
+  .fa-link[data-toggle="tooltip"].copied::after {
     content: "Link copied successfully!";
   }
 </style>
