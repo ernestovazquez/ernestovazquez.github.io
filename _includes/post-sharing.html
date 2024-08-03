@@ -35,3 +35,30 @@
     </button>
   </span>
 </div>
+
+<script>
+  function copyLink() {
+    const url = '{{ page.url | relative_url | prepend: site.url }}';
+    navigator.clipboard.writeText(url).then(() => {
+      const button = document.getElementById('copy-link');
+      const originalTitle = button.getAttribute('title');
+      const successTitle = button.getAttribute('data-title-succeed');
+
+      button.setAttribute('title', successTitle);
+      button.setAttribute('data-bs-original-title', successTitle);
+      // Bootstrap tooltip update
+      var tooltip = bootstrap.Tooltip.getInstance(button);
+      tooltip.setContent({ '.tooltip-inner': successTitle });
+
+      setTimeout(() => {
+        button.setAttribute('title', originalTitle);
+        button.setAttribute('data-bs-original-title', originalTitle);
+        // Bootstrap tooltip update
+        tooltip.setContent({ '.tooltip-inner': originalTitle });
+      }, 2000);
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+    });
+  }
+</script>
+
