@@ -21,8 +21,17 @@
         </a>
     {% endfor %}
 
-    <i class="fa-fw fas fa-link small" onclick="copyLink()"
-        data-toggle="tooltip" data-placement="top" title="Copy link"></i>
-
+    <button
+      id="copy-link"
+      aria-label="Copy link"
+      class="btn small"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
+      onclick="copyLink()"
+    >
+      <i class="fa-fw fas fa-link pe-none fs-6"></i>
+    </button>
   </span>
 </div>
