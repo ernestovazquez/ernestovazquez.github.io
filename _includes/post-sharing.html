@@ -21,16 +21,41 @@
         </a>
     {% endfor %}
 
-    <button
-      id="copy-link"
-      aria-label="Copy link"
-      class="btn small"
-      data-bs-toggle="tooltip"
-      data-bs-placement="top"
-      title="Copy link"
-      data-title-succeed="Link copied successfully!"
-    >
-      <i class="fa-fw fas fa-link small"</i>
-    </button>
+    <i class="fa-fw fas fa-link small" onclick="copyLink()"
+        data-toggle="tooltip" data-placement="top" title="Copy link"></i>
   </span>
 </div>
+
+<script>
+  function copyLink() {
+    const url = '{{ page.url | relative_url | prepend: site.url }}';
+    navigator.clipboard.writeText(url).then(() => {
+      const icon = document.querySelector('.fa-link');
+      const originalTitle = icon.getAttribute('title');
+      const successTitle = 'Link copied successfully!';
+
+      icon.setAttribute('title', successTitle);
+      icon.setAttribute('data-original-title', successTitle);
+      // Bootstrap tooltip update
+      var tooltip = bootstrap.Tooltip.getInstance(icon);
+      tooltip.setContent({ '.tooltip-inner': successTitle });
+
+      setTimeout(() => {
+        icon.setAttribute('title', originalTitle);
+        icon.setAttribute('data-original-title', originalTitle);
+        // Bootstrap tooltip update
+        tooltip.setContent({ '.tooltip-inner': originalTitle });
+      }, 2000);
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  });
+</script>
+
