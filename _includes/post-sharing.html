@@ -21,9 +21,41 @@
         </a>
     {% endfor %}
 
-    <i class="fa-fw fas fa-link small" onclick="copyLink()"
+    <i class="fa-fw fas fa-link small" onclick="this.classList.add('copied')"
         data-toggle="tooltip" data-placement="top" title="Copy link"
         style="cursor: pointer;"></i>
 
   </span>
 </div>
+
+<style>
+  .fa-link {
+    position: relative;
+  }
+
+  .fa-link::after {
+    content: "Copy link";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    white-space: nowrap;
+    background: #000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 12px;
+    display: none;
+  }
+
+  .fa-link:hover::after,
+  .fa-link.copied::after {
+    display: block;
+  }
+
+  .fa-link.copied::after {
+    content: "Link copied successfully!";
+  }
+</style>
+
