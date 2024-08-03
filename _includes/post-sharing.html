@@ -27,3 +27,26 @@
 
   </span>
 </div>
+
+<script>
+  function copyLink() {
+    const url = window.location.href;
+    const tempInput = document.createElement('input');
+    tempInput.value = url;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
+
+    // Cambiar el título del ícono a "Copiado exitosamente"
+    const icon = document.querySelector('.fa-link');
+    if (icon) {
+      icon.setAttribute('title', 'Copiado exitosamente');
+      // Restablecer el título después de 2 segundos (opcional)
+      setTimeout(() => {
+        icon.setAttribute('title', 'Copy link');
+      }, 2000);
+    }
+  }
+</script>
+
