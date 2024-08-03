@@ -27,37 +27,3 @@
 
   </span>
 </div>
-
-<script>
-  function copyLink() {
-    // Copiar la URL al portapapeles
-    const url = window.location.href;
-    const tempInput = document.createElement('input');
-    tempInput.value = url;
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    document.execCommand('copy');
-    document.body.removeChild(tempInput);
-
-    // Cambiar el título del ícono
-    const icon = document.querySelector('.fa-link');
-    if (icon) {
-      const originalTitle = icon.getAttribute('title'); // Guardar el título original
-      icon.setAttribute('title', 'Copiado exitosamente');
-      
-      // Mostrar el tooltip de Bootstrap (si estás usando Bootstrap)
-      if (typeof $(document).ready === 'function' && typeof $.fn.tooltip === 'function') {
-        $(icon).tooltip('update');
-      }
-
-      // Restablecer el título después de 2 segundos
-      setTimeout(() => {
-        icon.setAttribute('title', originalTitle);
-        if (typeof $(document).ready === 'function' && typeof $.fn.tooltip === 'function') {
-          $(icon).tooltip('update');
-        }
-      }, 2000);
-    }
-  }
-</script>
-
