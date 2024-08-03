@@ -47,22 +47,49 @@
     font-size: 12px;
     display: none;
     z-index: 1000;
+    transition: opacity 0.5s;
   }
 
   .copy-link.clicked::after {
     content: "Link copied successfully!";
     display: block;
+    opacity: 1;
   }
 
-  .copy-link.clicked:hover::after {
-    display: none;
+  .copy-link.clicked::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -30px; /* Adjust this value to position the tooltip above the icon */
+    white-space: nowrap;
+    background: #000;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 999;
+  }
+
+  .copy-link.clicked.show-message::before {
+    opacity: 1;
   }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.copy-link').addEventListener('click', function() {
+    const copyLink = document.querySelector('.copy-link');
+
+    copyLink.addEventListener('click', function() {
+      // Show the copied message
       this.classList.add('clicked');
+      
+      // Remove the message after 2 seconds
+      setTimeout(() => {
+        this.classList.remove('clicked');
+      }, 2000);
     });
   });
 </script>
