@@ -21,56 +21,9 @@
         </a>
     {% endfor %}
 
-    <i class="fa-fw fas fa-link small copy-link"
+    <i class="fa-fw fas fa-link small" onclick="copyLink()"
         data-toggle="tooltip" data-placement="top" title="Copy link"
         style="cursor: pointer;"></i>
 
   </span>
 </div>
-
-<style>
-  .copy-link {
-    position: relative;
-  }
-
-  .copy-link::after {
-    content: attr(title);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -30px; /* Adjust this value to position the tooltip above the icon */
-    white-space: nowrap;
-    background: #000;
-    color: #fff;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 12px;
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    z-index: 1000;
-  }
-
-  .copy-link.show-message::after {
-    content: "Link copied successfully!";
-    display: block;
-    opacity: 1;
-  }
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const copyLink = document.querySelector('.copy-link');
-
-    copyLink.addEventListener('click', function() {
-      // Show the copied message
-      this.classList.add('show-message');
-
-      // Remove the message after 2 seconds
-      setTimeout(() => {
-        this.classList.remove('show-message');
-      }, 2000);
-    });
-  });
-</script>
-
