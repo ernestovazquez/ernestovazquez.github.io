@@ -33,7 +33,7 @@
     position: relative;
   }
 
-  .fa-link[data-toggle="tooltip"]::after {
+  .fa-link[data-toggle="tooltip"]::before {
     content: attr(title);
     position: absolute;
     left: 50%;
@@ -49,13 +49,17 @@
     z-index: 1000;
   }
 
-  .fa-link[data-toggle="tooltip"]:hover::after,
-  .fa-link[data-toggle="tooltip"].copied::after {
+  .fa-link[data-toggle="tooltip"]:hover::before {
     display: block;
   }
 
-  .fa-link[data-toggle="tooltip"].copied::after {
+  .fa-link.copied[data-toggle="tooltip"]::before {
     content: "Link copied successfully!";
+    display: block;
+  }
+
+  .fa-link.copied:hover::before {
+    display: none;
   }
 </style>
 
