@@ -25,8 +25,6 @@ layout: compress
 
   {% include head.html %}
 
-  {% include google-adsense.html %}
-
   <body data-spy="scroll" data-target="#toc">
 
     <div id="sidebar" class="d-flex flex-column">
@@ -34,6 +32,10 @@ layout: compress
     </div>
 
     {% include topbar.html %}
+
+    <div class="ads">
+      {% include google-adsense.html %}
+    </div>
 
     <div id="main-wrapper">
       <div id="main">

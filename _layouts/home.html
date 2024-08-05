@@ -62,7 +62,11 @@ layout: page
         {{ content | markdownify | strip_html | truncate: 200 }}
       </p>
     </div>
-    
+
+    <div class="ads">
+      {% include google-adsense.html %}
+    </div>    
+
     <div class="post-meta text-muted">
       <!-- posted date -->
       <i class="far fa-clock fa-fw"></i>
