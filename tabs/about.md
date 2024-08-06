@@ -19,3 +19,4 @@ En resumen, un devops es un profesional que ayuda a equipos de desarrollo a entr
 
 ---------------------------
 
+{% include google-adsense.html %}

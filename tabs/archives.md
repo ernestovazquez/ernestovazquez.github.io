@@ -38,3 +38,5 @@ type: archives
   {% endif %}
 {% endfor %}
 </div>
+
+{% include google-adsense.html %}

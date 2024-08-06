@@ -27,3 +27,5 @@ type: tags
 {% endfor %}
 
 </div>
+
+{% include google-adsense.html %}
