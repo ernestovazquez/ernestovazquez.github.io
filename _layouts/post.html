@@ -28,9 +28,10 @@ layout: default
             {{ site.author }}
           {% endif %}
           </span>
+        </div>
+        <div>
           {% include google-adsense.html %}
         </div>
-
         <!-- lastmod -->
         {%- capture filename -%}
           {{ page.url | split: "/" | last }}
@@ -112,8 +113,8 @@ layout: default
 
           {% include post-sharing.html %}
 
-        </div><!-- .post-tail-bottom -->
-
+        </div><!-- .post-tail-bottom -->  
+        {% include google-adsense.html %}
       </div><!-- div.post-tail -->
 
     </div> <!-- .post -->
