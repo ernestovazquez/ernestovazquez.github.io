@@ -42,8 +42,6 @@
 
   {% include trending-tags.html %}
 
-  {% include google-adsense.html %}
-
   {% if trending_tags.size > 0 %}
     <div id="access-tags">
       <h3 data-toc-skip>
@@ -59,6 +57,8 @@
     </div>
   {% endif %}
   </div> <!-- .access -->
+
+  {% include google-adsense.html %}
 
   {% if page.layout == 'post' and site.toc and page.toc %}
   <div id="toc-wrapper" class="pl-0 pr-4 mb-5">
