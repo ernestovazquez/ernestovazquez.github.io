@@ -46,7 +46,9 @@ layout: page
 <div id="post-list">
 
 {% for post in posts %}
-
+  <div style="margin-top: 1em;">
+    {% include google-adsense.html %}
+  </div>
   <div class="post-preview">
     <div class="d-flex justify-content-between pr-xl-2">
       <h1><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
