@@ -45,7 +45,6 @@ layout: page
   {% assign post_counter = 0 %}
 
   {% for post in posts %}
-
     <div class="post-preview">
       <div class="d-flex justify-content-between pr-xl-2">
         <h1><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
@@ -77,13 +76,13 @@ layout: page
     </div> <!-- .post-review -->
 
     {% assign post_counter = post_counter | plus: 1 %}
-    
-    {% if post_counter % 4 == 0 and forloop.index != posts.size %}
+
+    <!-- Show ad every 4 posts, but not on the last post -->
+    {% if post_counter % 4 == 0 and forloop.index < posts.size %}
       <div class="ad-container">
         {% include google-adsense.html %}
       </div>
     {% endif %}
-
   {% endfor %}
 </div> <!-- #post-list -->
 
