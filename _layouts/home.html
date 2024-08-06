@@ -7,9 +7,6 @@ layout: page
 # MIT Licensed
 ---
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2609091718795911"
-     crossorigin="anonymous"></script>
-
 {% assign pinned = site.posts | where_exp: "item", "item.pin == true"  %}
 {% assign default = site.posts | where_exp: "item", "item.pin != true"  %}
 {% assign posts = "" | split: "" %}
