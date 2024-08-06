@@ -11,7 +11,6 @@ type: archives
 <div style="margin-top: 1em;">
   {% include google-adsense.html %}
 </div>
-<br><br>
 
 <div id="archives" class="pl-xl-2">
 {% for post in site.posts %}
@@ -42,4 +41,8 @@ type: archives
     {% assign last_month = "" %}
   {% endif %}
 {% endfor %}
+</div>
+
+<div style="margin-top: 1em;">
+  {% include google-adsense.html %}
 </div>
