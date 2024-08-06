@@ -8,6 +8,11 @@ type: archives
 # MIT License
 ---
 
+<div style="margin-top: 1em;">
+  {% include google-adsense.html %}
+</div>
+<br><br>
+
 <div id="archives" class="pl-xl-2">
 {% for post in site.posts %}
   {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
@@ -38,5 +43,3 @@ type: archives
   {% endif %}
 {% endfor %}
 </div>
-
-{% include google-adsense.html %}

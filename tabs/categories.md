@@ -15,11 +15,6 @@ type: categories
 
 {% assign sort_categories = site.categories | sort %}
 
-<div style="margin-top: 1em;">
-  {% include google-adsense.html %}
-</div>
-<br><br>
-
 {% for category in sort_categories %}
   {% assign category_name = category | first %}
   {% assign posts_of_category = category | last %}
