@@ -18,6 +18,7 @@ type: categories
 <div style="margin-top: 1em;">
   {% include google-adsense.html %}
 </div>
+<br><br>
 
 {% for category in sort_categories %}
   {% assign category_name = category | first %}
@@ -104,3 +105,7 @@ type: categories
     {% assign group_index = group_index | plus: 1 %}
   {% endif %}
 {% endfor %}
+
+<div style="margin-top: 1em;">
+  {% include google-adsense.html %}
+</div>

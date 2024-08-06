@@ -8,6 +8,10 @@ type: tags
 # MIT License
 ---
 
+<div style="margin-top: 1em;">
+  {% include google-adsense.html %}
+</div>
+
 {% comment %}
   'site.tags' looks like a Map, e.g. site.tags.MyTag.[ Post0, Post1, ... ]
   Print the {{ site.tags }} will help you to understand it.
@@ -25,7 +29,4 @@ type: tags
     <a class="tag" href="{{ site.baseurl }}/tags/{{ t | replace: ' ', '-' | downcase | url_encode }}/">{{ t }}<span class="text-muted">{{ site.tags[t].size }}</span></a>
   </div>
 {% endfor %}
-</div>
-<div style="margin-top: 1em;">
-  {% include google-adsense.html %}
 </div>
