@@ -35,6 +35,10 @@ type: categories
     {% assign sub_categories = sub_categories | sort %}
     {% assign sub_categories_size = sub_categories | size %}
 
+  <div style="margin-top: 1em;">
+    {% include google-adsense.html %}
+  </div>
+
   <div class="card categories">
     <!-- top-category -->
     <div class="card-header d-flex justify-content-between hide-border-bottom"
@@ -100,5 +104,3 @@ type: categories
     {% assign group_index = group_index | plus: 1 %}
   {% endif %}
 {% endfor %}
-
-{% include google-adsense.html %}
