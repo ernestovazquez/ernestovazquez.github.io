@@ -54,10 +54,9 @@
         <a class="post-tag" href="{{ url | relative_url }}">{{ tag | replace: '-', ' ' }}</a>
       {% endfor %}
       </div>
-      <br><br>
-      {% include google-adsense.html %}
     </div>
   {% endif %}
+  {% include google-adsense.html %}
   </div> <!-- .access -->
 
   {% if page.layout == 'post' and site.toc and page.toc %}
