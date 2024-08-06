@@ -15,6 +15,10 @@ type: categories
 
 {% assign sort_categories = site.categories | sort %}
 
+<div style="margin-top: 1em;">
+  {% include google-adsense.html %}
+</div>
+
 {% for category in sort_categories %}
   {% assign category_name = category | first %}
   {% assign posts_of_category = category | last %}
@@ -34,10 +38,6 @@ type: categories
 
     {% assign sub_categories = sub_categories | sort %}
     {% assign sub_categories_size = sub_categories | size %}
-
-  <div style="margin-top: 1em;">
-    {% include google-adsense.html %}
-  </div>
 
   <div class="card categories">
     <!-- top-category -->

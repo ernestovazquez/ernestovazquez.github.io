@@ -25,7 +25,7 @@ type: tags
     <a class="tag" href="{{ site.baseurl }}/tags/{{ t | replace: ' ', '-' | downcase | url_encode }}/">{{ t }}<span class="text-muted">{{ site.tags[t].size }}</span></a>
   </div>
 {% endfor %}
-  <div style="margin-top: 1em;">
-    {% include google-adsense.html %}
-  </div>
+</div>
+<div style="margin-top: 1em;">
+  {% include google-adsense.html %}
 </div>
