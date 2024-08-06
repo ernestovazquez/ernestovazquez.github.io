@@ -78,6 +78,11 @@ layout: page
     </div>
   </div> <!-- .post-review -->
 
+  <!-- Mostrar un anuncio después de cada 2 posts -->
+  {% if forloop.index % 2 == 0 %}
+    {% include google-adsense.html %}
+  {% endif %}
+
 {% endfor %}
 
 </div> <!-- #post-list -->
