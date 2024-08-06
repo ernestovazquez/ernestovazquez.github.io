@@ -101,7 +101,6 @@
             <div class="text-muted small">
               <p>
                 {% include no-linenos.html content=post.content %}
-                {% include google-adsense.html %}
                 {{ content | markdownify | strip_html | truncate: 200 }}
               </p>
             </div>
