@@ -8,7 +8,7 @@ type: archives
 # MIT License
 ---
 
-<div style="margin-top: 1em;">
+<div style="margin-bottom: 1em;">
   {% include google-adsense.html %}
 </div>
 
