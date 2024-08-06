@@ -53,10 +53,12 @@
         {% capture url %}/tags/{{ tag | downcase | url_encode }}/{% endcapture %}
         <a class="post-tag" href="{{ url | relative_url }}">{{ tag | replace: '-', ' ' }}</a>
       {% endfor %}
+        <div style="margin-top: 1em;">
+          {% include google-adsense.html %}
+        </div>
       </div>
     </div>
   {% endif %}
-  {% include google-adsense.html %}
   </div> <!-- .access -->
 
   {% if page.layout == 'post' and site.toc and page.toc %}
