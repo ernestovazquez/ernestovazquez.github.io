@@ -78,7 +78,7 @@ layout: page
 
     {% assign post_counter = post_counter | plus: 1 %}
     
-    {% if post_counter % 4 == 0 %}
+    {% if post_counter % 4 == 0 and forloop.index != posts.size %}
       <div class="ad-container">
         {% include google-adsense.html %}
       </div>
