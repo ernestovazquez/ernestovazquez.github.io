@@ -53,9 +53,7 @@
         {% capture url %}/tags/{{ tag | downcase | url_encode }}/{% endcapture %}
         <a class="post-tag" href="{{ url | relative_url }}">{{ tag | replace: '-', ' ' }}</a>
       {% endfor %}
-      {% include google-adsense.html %}
       </div>
-      {% include google-adsense.html %}
     </div>
     {% include google-adsense.html %}
   {% endif %}
