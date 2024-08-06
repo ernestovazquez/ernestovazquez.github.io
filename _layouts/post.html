@@ -64,25 +64,7 @@ layout: default
         <img src="{{ page.image }}" class="post-preview-img">
         {% endif %}
 
-        <!-- Insert the AdSense ads -->
-        {% assign content_array = content | split: "\n" %}
-        {% assign ad_inserts = 3 %} <!-- Number of ads to show -->
-        {% assign content_length = content_array.size %}
-        {% assign interval = content_length | divided_by: ad_inserts %}
-        
-        <!-- Loop through content lines and add ads -->
-        {% for i in (0..content_array.size-1) %}
-          {{ content_array[i] | markdownify }}
-          {% if i == interval or i == 2 * interval %}
-            <!-- Insert AdSense ad -->
-            {% include google-adsense.html %}
-          {% endif %}
-        {% endfor %}
-
-        <!-- Handle case when the last ad needs to be added -->
-        {% if content_length > (ad_inserts - 1) * interval %}
-          {% include google-adsense.html %}
-        {% endif %}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2609091718795911" crossorigin="anonymous"></script>
 
         <!-- Using lozad. See: <https://github.com/ApoorvSaxena/lozad.js#usage> -->
         {% if content contains '<img src=' %}
