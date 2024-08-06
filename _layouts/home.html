@@ -79,7 +79,7 @@ layout: page
   </div> <!-- .post-review -->
 
   <!-- Mostrar un anuncio después de cada 4 posts -->
-  {% if forloop.index0 != 0 and forloop.index0 % 4 == 0 %}
+  {% if forloop.index0 != 0 and forloop.index0 % 4 == 2 %}
     {% include google-adsense.html %}
   {% endif %}
 
