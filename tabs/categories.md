@@ -98,6 +98,7 @@ type: categories
   </div> <!-- .card -->
 
     {% assign group_index = group_index | plus: 1 %}
-    {% include google-adsense.html %}
   {% endif %}
 {% endfor %}
+
+{% include google-adsense.html %}
