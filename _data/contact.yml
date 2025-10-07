@@ -4,9 +4,9 @@
 #  © 2020 Cotes Chung
 #  MIT Licensed
 
--
-  icon: 'fab fa-linkedin'   
-  url:  'https://www.linkedin.com/in/ernestovazquezgarcia'          
+#-
+#  icon: 'fab fa-linkedin'   
+#  url:  'https://www.linkedin.com/in/ernestovazquezgarcia'          
 -
   type: github
   icon: 'fab fa-github-alt'       
