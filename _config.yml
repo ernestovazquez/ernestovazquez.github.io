@@ -18,7 +18,7 @@ description: >-                        # used by seo meta and the atom feed
 # Replace with the website url, e.g. 'https://username.github.io'
 url: 'https://ernestovazquez.es'
 
-author: Ernesto Vázquez García                  # change to your full name
+author: Ernesto Vázquez                  # change to your full name
 
 avatar: /assets/img/favicons/avatar.jpg   # support internet resources
 
@@ -26,14 +26,14 @@ github:
   username: ernestovazquez             # change to your github username
 
 social:
-  name: Ernesto Vázquez García                  # it will shows as the copyright owner in Footer
+  name: Ernesto Vázquez                  # it will shows as the copyright owner in Footer
   email: vazquezgarciaernesto@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
     - https://github.com/ernestovazquez       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    - https://www.linkedin.com/in/ernestovazquezgarcia
+    # - https://www.linkedin.com/in/ernestovazquezgarcia
 
 google_site_verification: google_meta_tag_verification # change to your verification string
 
